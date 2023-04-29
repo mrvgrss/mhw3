@@ -58,9 +58,6 @@ async function searchFlight(event) {
     }
 
     onFlightOffert(flight_origin_value, flight_destination_value, flight_departure_date_value, flight_return_date_value, flight_adults_value, 1);
-
-    
-    console.log("search flight...");
 }
 function onFlightOffert(originLocationCode, destinationLocationCode, departureDate, returnDate, adults, max=1){ 
     if(token_data == null){
@@ -182,11 +179,6 @@ function onJsonFlightOffert(json){
 
         const planes = offert_doc.querySelector('.planes');
         const plane_stopovers_img = planes.querySelector('img');
-
-        console.log(data_extracted[0].stopovers);
-
-
-
         for(var i = 0; i < parseInt(data_extracted[0].stopovers); i++){
             const image = document.createElement('img');
             image.src = plane_stopovers_img.src;
